@@ -371,7 +371,8 @@ Least Possible Hashs:
 ## Zadanie 3
 
 #### Analiza ruchu HTTP
-
+![alt text](/screenshots/3_1.png)
+![alt text](/screenshots/3_2.png)
 ## Zadanie 4
 
 ### Analiza ruchu SSH
