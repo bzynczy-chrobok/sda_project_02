@@ -376,6 +376,53 @@ Least Possible Hashs:
 ## Zadanie 4
 
 ### Analiza ruchu SSH
+Nawiązanie połaczenia pomiędzy Kali a SDA za pośrednictwem SSH
+```console
+┌──(kali㉿kali)-[~]
+└─$ ssh uranus@192.168.100.136
+uranus@192.168.100.136's password: 
+Welcome to Ubuntu 22.04 LTS (GNU/Linux 5.15.0-27-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Sat Nov  5 08:14:33 PM UTC 2022
+
+  System load:  0.00244140625     Processes:               117
+  Usage of /:   32.2% of 9.75GB   Users logged in:         0
+  Memory usage: 3%                IPv4 address for enp0s3: 192.168.100.136
+  Swap usage:   0%
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+150 updates can be applied immediately.
+96 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+
+Last login: Sat Nov  5 20:14:34 2022 from 192.168.100.126
+```
+Tworzenie plików z tajnymi hasłami
+```console
+uranus@vm-sda:~$ touch sekret1.txt
+uranus@vm-sda:~$ touch sekret2.txt
+uranus@vm-sda:~$ echo "Sup3erM3GaTajn3Haslo!" > sekret1.txt 
+uranus@vm-sda:~$ echo "strasznielatwehaslo" > sekret2.txt 
+```
+
+Konfiguracja vsftpd umożliwiająca wgrywanie plików za pośrednictwem FTP
+![alt text](/screenshots/4.png)
+
+Analiza ruchu sieciowego w poszukiwaniu zawartości plików sekret1.txt oraz sekret2.txt:
+
+**Cały ruch za pośrednictwem protokołu SSH jest szyfrowany, dlatego nie ma możliwości podejrzenia jego zawartości!**
+
+![alt text](/screenshots/4_1.png)
+
 
 ## Zadanie 5
 
